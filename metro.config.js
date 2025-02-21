@@ -1,3 +1,10 @@
+const os = require('os');
+
+if (!os.availableParallelism) {
+  os.availableParallelism = () => os.cpus().length;
+}
+
+
 const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
 
 /**
